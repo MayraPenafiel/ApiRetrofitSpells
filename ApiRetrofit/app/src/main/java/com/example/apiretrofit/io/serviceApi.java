@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 
 public interface serviceApi {
 
+        //Metodo para obtener/llamar datos de la api
         @GET("Spells")
         Call<List<Hechizo>> getAllHechizo();
     

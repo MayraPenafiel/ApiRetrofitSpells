@@ -2,14 +2,10 @@ package com.example.apiretrofit;
 
 import android.os.Bundle;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.apiretrofit.io.serviceApi;
 import com.example.apiretrofit.model.Hechizo;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,11 +20,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         item=findViewById(R.id.txthechizo);
-
         getFact();
-
     }
 
     private void getFact(){
@@ -38,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         serviceApi ser=retrofit.create(serviceApi.class);
-
         Call<List<Hechizo>> hec = ser.getAllHechizo();
 
         hec.enqueue(new Callback<List<Hechizo>>() {
@@ -49,17 +41,15 @@ public class MainActivity extends AppCompatActivity {
                     item.setText(": "+response.code());
                     return;
                 }
+
                 List<Hechizo> listaH= response.body();
 
                 for(Hechizo h :listaH ){
                     String c= "";
-                    c+="__________________________________________________"+"\n";
-                    c+="Nombre: "+h.getName()+"\n";
-                    c+="Conjuro: "+h.getIncantation()+"\n";
-                    c+="Efecto: "+h.getEffect()+"\n";
-                    c+="Tipo: "+h.getType()+"\n";
-                    c+="Luz: "+h.getLight()+"\n";
-                    c+="Creador: "+h.getCreator()+"\n";
+                    c+="__________________________________________________"+"\n"
+                    +"Nombre: "+h.getName()+"\n"+"Conjuro: "+h.getIncantation()+"\n"
+                    +"Efecto: "+h.getEffect()+"\n"+"Tipo: "+h.getType()+"\n"
+                    +"Luz: "+h.getLight()+"\n"+"Creador: "+h.getCreator()+"\n";
                     item.append(c);
                 }
             }
