@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ApiRetrofit</string>
+    <string name="pregunta">¿Cuantos Animales desea generar?</string>
+    <string name="bienvenida">Bienvenido/a          \\(^-^)/</string>
+    <string name="error">Ingrese un numero</string>
+    <string name="titulo">Hechizos/Spells</string>
+    <string name="todo">TODO</string>
+</resources>
